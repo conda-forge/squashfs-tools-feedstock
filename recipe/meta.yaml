@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [not linux]
-  number: 1000
+  number: 1001
   script:
     - cd squashfs-tools
     - make install
