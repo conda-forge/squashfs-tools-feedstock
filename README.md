@@ -58,6 +58,7 @@ Current build status
       <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
     </td>
   </tr>
+![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
 </table>
 
 Current release info
@@ -152,5 +153,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@mariusvniekerk](https://github.com/mariusvniekerk/)
+* [@mingwandroid](https://github.com/mingwandroid/)
 * [@sodre](https://github.com/sodre/)
 
