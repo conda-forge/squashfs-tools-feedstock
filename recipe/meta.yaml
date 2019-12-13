@@ -12,7 +12,7 @@ source:
     - 0001-modern-compression.diff
 
 build:
-  skip: True  # [not linux]
+  skip: True  # [not linux and not osx]
   number: 1002
   script:
     - cd squashfs-tools
@@ -37,7 +37,7 @@ test:
 
 about:
   home: https://sourceforge.net/projects/squashfs/ 
-  license: GPL 2.0
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: COPYING
   summary: 'Tools for creating and unpacking squashfs filesystems'
