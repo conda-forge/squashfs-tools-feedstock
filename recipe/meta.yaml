@@ -16,7 +16,7 @@ source:
 
 build:
   skip: True  # [not unix]
-  number: 1003
+  number: 1004
   script:
     - cd squashfs-tools
     - make -j${CPU_COUNT} install
