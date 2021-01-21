@@ -9,7 +9,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 lz4_c:
-- 1.9.2
+- 1.9.3
 lzo:
 - '2'
 macos_machine:

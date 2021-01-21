@@ -177,4 +177,5 @@ Feedstock Maintainers
 
 * [@mingwandroid](https://github.com/mingwandroid/)
 * [@sodre](https://github.com/sodre/)
+* [@xhochy](https://github.com/xhochy/)
 
