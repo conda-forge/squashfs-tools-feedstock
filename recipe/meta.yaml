@@ -9,7 +9,6 @@ source:
   url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs{{ version }}/squashfs{{ version }}.tar.gz
   sha256: a981b3f3f2054b5a2e658851a3c06a2460ad04a9a8a645e0afe063a63fdbb07e
   patches:
-    - 0001-modern-compression.diff
     # Required for macOS support
     # In 4.4 https://github.com/plougher/squashfs-tools/pull/69 is used by homebrew but might only support 10.13+
     - pr3.patch
@@ -17,9 +16,6 @@ source:
 build:
   skip: true  # [not unix]
   number: 0
-  script:
-    - cd squashfs-tools
-    - make -j${CPU_COUNT} install
 
 requirements:
   build:
@@ -30,6 +26,7 @@ requirements:
     - lzo
     - xz
     - zlib
+    - zstd
 
 test:
   commands:
