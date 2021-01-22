@@ -1,5 +1,5 @@
 {% set name = "squashfs-tools" %}
-{% set version = "4.3" %}
+{% set version = "4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,19 +7,15 @@ package:
 
 source:
   url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs{{ version }}/squashfs{{ version }}.tar.gz
-  sha256: 0d605512437b1eb800b4736791559295ee5f60177e102e4d4ccd0ee241a5f3f6
+  sha256: a981b3f3f2054b5a2e658851a3c06a2460ad04a9a8a645e0afe063a63fdbb07e
   patches:
-    - 0001-modern-compression.diff
     # Required for macOS support
     # In 4.4 https://github.com/plougher/squashfs-tools/pull/69 is used by homebrew but might only support 10.13+
     - pr3.patch
 
 build:
-  skip: True  # [not unix]
-  number: 1005
-  script:
-    - cd squashfs-tools
-    - make -j${CPU_COUNT} install
+  skip: true  # [not unix]
+  number: 0
 
 requirements:
   build:
@@ -30,6 +26,7 @@ requirements:
     - lzo
     - xz
     - zlib
+    - zstd
 
 test:
   commands:
@@ -41,7 +38,7 @@ about:
   license: GPL-2.0-or-later
   license_family: GPL
   license_file: COPYING
-  summary: 'Tools for creating and unpacking squashfs filesystems'
+  summary: Tools for creating and unpacking squashfs filesystems
 
   description: |
     Squashfs is a highly compressed read-only filesystem for Linux.
