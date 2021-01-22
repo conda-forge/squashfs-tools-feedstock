@@ -1,13 +1,11 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
-MACOSX_SDK_VERSION:
-- '10.12'
+- '11.0'
 c_compiler:
 - clang
 c_compiler_version:
 - '11'
 channel_sources:
-- conda-forge,defaults
+- conda-forge/label/rust_dev,conda-forge
 channel_targets:
 - conda-forge main
 lz4_c:
@@ -15,7 +13,7 @@ lz4_c:
 lzo:
 - '2'
 macos_machine:
-- x86_64-apple-darwin13.4.0
+- arm64-apple-darwin20.0.0
 pin_run_as_build:
   lz4-c:
     max_pin: x.x.x
@@ -26,7 +24,7 @@ pin_run_as_build:
   zlib:
     max_pin: x.x
 target_platform:
-- osx-64
+- osx-arm64
 xz:
 - '5.2'
 zlib:
