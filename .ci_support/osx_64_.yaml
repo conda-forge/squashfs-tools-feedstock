@@ -5,9 +5,9 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '11'
+- '13'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 lz4_c:
@@ -17,8 +17,6 @@ lzo:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:
-  lz4-c:
-    max_pin: x.x.x
   lzo:
     max_pin: x
   xz:
