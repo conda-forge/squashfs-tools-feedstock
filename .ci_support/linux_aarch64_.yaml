@@ -3,7 +3,7 @@ BUILD:
 c_compiler:
 - gcc
 c_compiler_version:
-- '9'
+- '10'
 cdt_arch:
 - aarch64
 cdt_name:
@@ -19,8 +19,6 @@ lz4_c:
 lzo:
 - '2'
 pin_run_as_build:
-  lz4-c:
-    max_pin: x.x.x
   lzo:
     max_pin: x
   xz:
