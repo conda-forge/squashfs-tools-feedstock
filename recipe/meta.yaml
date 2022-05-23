@@ -12,11 +12,11 @@ source:
     # Required for macOS support
     # In 4.4 https://github.com/plougher/squashfs-tools/pull/69 is used by homebrew but might only support 10.13+
     - pr3.patch
-    - fix-clang-11.patch  # [osx]
+    - fix-clang-11.patch
 
 build:
   skip: true  # [not unix]
-  number: 2
+  number: 3
 
 requirements:
   build:
