@@ -1,18 +1,13 @@
 {% set name = "squashfs-tools" %}
-{% set version = "4.6" %}
+{% set version = "4.6.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs{{ version }}/squashfs{{ version }}.tar.gz
-  sha256: 03ebe31dc1461be7a42fa75394f760979c11f1cf4d3c4496b33d2e66596fb2bf
-  patches:
-    # Required for macOS support
-    # In 4.4 https://github.com/plougher/squashfs-tools/pull/69 is used by homebrew but might only support 10.13+
-    - pr3.patch
-    - fix-clang-11.patch
+  url: https://github.com/plougher/squashfs-tools/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c
 
 build:
   skip: true  # [not unix]
@@ -22,6 +17,8 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make
+    - help2man
+    - sed
   host:
     - lz4-c
     - lzo
