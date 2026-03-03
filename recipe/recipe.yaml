@@ -11,6 +11,8 @@ package:
 source:
   url: https://github.com/plougher/squashfs-tools/archive/refs/tags/${{ version }}.tar.gz
   sha256: 547b7b7f4d2e44bf91b6fc554664850c69563701deab9fd9cd7e21f694c88ea6
+  patches:
+    - 0001-Compatability-define-for-macOS.patch
 
 build:
   number: 0
@@ -32,7 +34,9 @@ requirements:
 
 tests:
   - script:
-      - mksquashfs ${RECIPE_DIR} recipe.fs
+      - mkdir testdir
+      - touch testdir/testfile
+      - mksquashfs testdir recipe.fs
       - unsquashfs recipe.fs
 
 about:

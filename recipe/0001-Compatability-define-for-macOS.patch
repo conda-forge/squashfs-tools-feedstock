@@ -1,0 +1,27 @@
+From 8e4293c41010a3e816b91ebf864b937506455150 Mon Sep 17 00:00:00 2001
+From: "Uwe L. Korn" <uwe.korn@quantco.com>
+Date: Tue, 3 Mar 2026 15:07:40 +0100
+Subject: [PATCH] Compatability define for macOS
+
+---
+ squashfs-tools/mksquashfs.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/squashfs-tools/mksquashfs.c b/squashfs-tools/mksquashfs.c
+index 153ff31..7430b5c 100644
+--- a/squashfs-tools/mksquashfs.c
++++ b/squashfs-tools/mksquashfs.c
+@@ -83,6 +83,13 @@
+ #include "alloc.h"
+ #include "virt_disk_pos.h"
+ 
++#if defined(__APPLE__) && !defined(st_atim)
++/* Map glibc-style stat timestamps to Darwin names */
++#define st_atim st_atimespec
++#define st_mtim st_mtimespec
++#define st_ctim st_ctimespec
++#endif
++
+ /* Compression options */
+ int noF = FALSE;
+ int noI = FALSE;
